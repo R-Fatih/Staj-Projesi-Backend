@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+      <handlers>
+        <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+              <remove name="WebDAV" />
+
+	  </handlers>
+      <aspNetCore processPath="dotnet" arguments=".\GuessBender.Server.dll" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" hostingModel="OutOfProcess" >
+	  <environmentVariables>
+        <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="Development" />
+      </environmentVariables>
+	  </aspNetCore>
+     <modules>
+        <remove name="WebDAVModule" />
+      </modules>
+	  
+	</system.webServer>
+  </location>
+</configuration>
+<!--ProjectGuid: 30cb7de7-fc12-4d4b-9a5a-34c1ff621897-->
